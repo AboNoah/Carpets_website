@@ -7,10 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-   <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/m5Z6SaVE2gQe4I1ok="
-  crossorigin=""/>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
 <body>
     <!-- Header Section -->
@@ -38,7 +37,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>أحمد محمد</h1>
+                <h1>فني سجاد محترف</h1>
                 <h2>خبير في إصلاح وتنظيف السجاد</h2>
                 <p>أكثر من 15 عامًا من الخبرة في ترميم وإصلاح جميع أنواع السجاد</p>
                 <a href="#contact" class="cta-button">احجز موعدًا الآن</a>
@@ -52,27 +51,102 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">خدماتنا</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="images/service1.jpeg" alt="إصلاح السجاد">
-                    <h3>إصلاح السجاد</h3>
-                    <p>إصلاح التمزقات والثقوب في السجاد باحترافية عالية</p>
+            <h2 class="section-title">معرض السجاد</h2>
+  
+            <div class="carpet-gallery">
+                <!-- Persian Carpets -->
+                <div class="carpet-item" data-category="persian">
+                    <div class="image-container">
+                        <img src="public/images/carpet-cleaning-steam-process.jpg" alt="سجاد إيراني تقليدي">
+                      
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد إيراني تقليدي</h3>
+                        <p>إصلاح شامل مع الحفاظ على النقوش الدقيقة</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم الإصلاح: 15 نوفمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> إصلاح + تنظيف</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <img src="images/service2.jpeg" alt="تنظيف السجاد">
-                    <h3>تنظيف السجاد</h3>
-                    <p>تنظيف عميق للسجاد باستخدام أحدث التقنيات</p>
+
+                <!-- Turkish Carpets -->
+                <div class="carpet-item" data-category="turkish">
+                    <div class="image-container">
+                        <img src="public/images/carpet-cleaning-professional-work.jpg" alt="سجاد تركي منقوش">
+                       
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد تركي منقوش</h3>
+                        <p>تنظيف عميق مع تثبيت الألوان</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التنظيف: 5 ديسمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> تنظيف + معالجة بقع</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <img src="images/service3.jpeg" alt="إزالة البقع">
-                    <h3>إزالة البقع</h3>
-                    <p>إزالة أصعب البقع من السجاد بمواد آمنة</p>
+
+                <!-- Antique Carpets -->
+                <div class="carpet-item" data-category="antique">
+                    <div class="image-container">
+                        <img src="public/images/carpet-cleaning-persian-rug.jpg" alt="سجاد عتيق">
+                       
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد عتيق نادر</h3>
+                        <p>ترميم كامل مع الحفاظ على القيمة التاريخية</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم الترميم: 20 أكتوبر 2023</span>
+                            <span><i class="fas fa-tools"></i> ترميم + صيانة</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <img src="images/service4.jpeg" alt="تلميع السجاد">
-                    <h3>تلميع السجاد</h3>
-                    <p>إعادة السجاد إلى لمعانه الأصلي</p>
+
+                <!-- Modern Carpets -->
+                <div class="carpet-item" data-category="modern">
+                    <div class="image-container">
+                        <img src="public/images/carpet-cleaning-oriental-detail.jpg" alt="سجاد عصري">
+                       
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد عصري</h3>
+                        <p>تنظيف وتعقيم بالبخار</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التنظيف: 1 ديسمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> تنظيف + تعقيم</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Carpet Items -->
+                <div class="carpet-item" data-category="persian">
+                    <div class="image-container">
+                        <img src="public/images/carpet-cleaning-living-room.jpg" alt="سجاد إيراني كلاسيكي">
+                        
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد إيراني كلاسيكي</h3>
+                        <p>إصلاح الحواف وإزالة البقع المستعصية</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم الإصلاح: 10 نوفمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> إصلاح + تنظيف</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carpet-item" data-category="turkish">
+                    <div class="image-container">
+                        <img src="public/images/carpet-collection-showcase.jpg" alt="سجاد تركي تقليدي">
+                        
+                    </div>
+                    <div class="carpet-info">
+                        <h3>سجاد تركي تقليدي</h3>
+                        <p>تنظيف وتجديد الألوان</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التنظيف: 25 نوفمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> تنظيف + تجديد ألوان</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,34 +175,66 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <h2 class="section-title">معرض الأعمال</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery1.jpeg" alt="عمل 1">
-                    <div class="gallery-overlay">
+            <div class="carpet-gallery">
+                <div class="carpet-item" data-category="repair">
+                    <div class="image-container">
+                        <img src="images/gallery1.jpeg" alt="إصلاح سجاد">
+                    </div>
+                    <div class="carpet-info">
                         <h3>إصلاح سجاد</h3>
+                        <p>إصلاح شامل لجميع أنواع السجاد مع الحفاظ على الجودة</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم الإصلاح: 15 نوفمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> إصلاح + ترميم</span>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery2.jpeg" alt="عمل 2">
-                    <div class="gallery-overlay">
+
+                <div class="carpet-item" data-category="cleaning">
+                    <div class="image-container">
+                        <img src="images/gallery2.jpeg" alt="تنظيف عميق">
+                    </div>
+                    <div class="carpet-info">
                         <h3>تنظيف عميق</h3>
+                        <p>تنظيف شامل لإزالة الأتربة والجراثيم</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التنظيف: 5 ديسمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> تنظيف + تعقيم</span>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery3.jpeg" alt="عمل 3">
-                    <div class="gallery-overlay">
+
+                <div class="carpet-item" data-category="stain-removal">
+                    <div class="image-container">
+                        <img src="images/gallery3.jpeg" alt="إزالة بقع">
+                    </div>
+                    <div class="carpet-info">
                         <h3>إزالة بقع</h3>
+                        <p>معالجة وإزالة البقع المستعصية</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التنظيف: 20 أكتوبر 2023</span>
+                            <span><i class="fas fa-tools"></i> إزالة بقع + معالجة</span>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery4.jpeg" alt="عمل 4">
-                    <div class="gallery-overlay">
+
+                <div class="carpet-item" data-category="polishing">
+                    <div class="image-container">
+                        <img src="images/gallery4.jpeg" alt="تلميع السجاد">
+                    </div>
+                    <div class="carpet-info">
                         <h3>تلميع السجاد</h3>
+                        <p>إعادة اللمعان والحيوية للسجاد</p>
+                        <div class="carpet-meta">
+                            <span><i class="far fa-calendar-alt"></i> تم التلميع: 1 ديسمبر 2023</span>
+                            <span><i class="fas fa-tools"></i> تلميع + تجديد</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Location Section -->
     <section id="location" class="location">
         <div class="container">
@@ -155,6 +261,12 @@
             </div>
         </div>
     </section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966556033613" class="whatsapp-float" target="_blank" aria-label="تواصل معنا على واتساب">
+        <i class="fab fa-whatsapp"></i>
+        <span>تواصل معنا</span>
+    </a>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -162,13 +274,15 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>معلومات التواصل</h3>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@carpetfixer.com</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+966501234567">+966 50 123 4567</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@carpetfixer.com">info@carpetfixer.com</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/966556033613" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -194,13 +308,12 @@
         <div class="container">
             <p>جميع الحقوق محفوظة &copy; 2025 فني سجاد محترف</p>
         </div>
-    </footer>
-
-    <!-- JavaScript -->
+    </footer> 
+     <!-- JavaScript -->
     <script src="js/main.js"></script>
-   <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""></script>
+ <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+ 
 </body>
 </html>

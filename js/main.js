@@ -103,36 +103,49 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initial check in case elements are already in view
   animateOnScroll();
+      initMap();
+
 });
 function initMap() {
-    // Default location (Riyadh coordinates)
-    const location = [24.640740111807077, 46.77614865190079];
-    
-    // Initialize the map
-    const map = L.map('map').setView(location, 15);
-    
+
+      // Initialize the map with a closer zoom level
+    const map = L.map('map').setView([24.640740111807077, 46.77614865190079], 16);
+
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19,
+        maxZoom: 18,
     }).addTo(map);
     
-    // Add a custom icon
-    const customIcon = L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+    // Add a marker for the business location with a custom icon
+    const myIcon = L.icon({
+        iconUrl: 'https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/images/marker-icon.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
-        shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+        shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/images/marker-shadow.png',
         shadowSize: [41, 41]
     });
-    
-    // Add marker with popup
-    L.marker(location, {icon: customIcon})
-        .addTo(map)
-        .bindPopup('فني سجاد محترف<br>الرياض، المملكة العربية السعودية')
+
+    const marker = L.marker([24.640740111807077, 46.77614865190079], {icon: myIcon}).addTo(map)
+        .bindPopup(`
+            <div style="text-align: right; direction: rtl;">
+                <strong>فني سجاد محترف</strong><br>
+                الرياض، المملكة العربية السعودية<br>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=24.640740111807077,46.77614865190079" 
+                   target="_blank" 
+                   style="color: #0066cc; text-decoration: underline;">
+                    افتح في خرائط جوجل
+                </a>
+            </div>
+        `)
         .openPopup();
+        
+    // Adjust map view to ensure marker is visible with some padding
+    map.fitBounds([
+        [marker.getLatLng().lat - 0.005, marker.getLatLng().lng - 0.005],
+        [marker.getLatLng().lat + 0.005, marker.getLatLng().lng + 0.005]
+    ]);
 }
 // Add scroll event listener for animation
 window.addEventListener('scroll', animateOnScroll);
-
