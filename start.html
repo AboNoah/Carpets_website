@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات متكاملة - الصفحة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+        .card-content i {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .card-content h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .cards-container {
+                grid-template-columns: 1fr;
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>مرحباً بكم في خدماتنا المتكاملة</h1>
+            <p>اختر الخدمة التي تريدها لنوفرها لك بأعلى جودة واحترافية</p>
+        </div>
+    </section>
+
+    <!-- Services Cards -->
+    <div class="container">
+        <div class="cards-container">
+            <!-- Carpet Fixer Card -->
+            <a href="index.html" class="service-card">
+                <div class="card-image">
+                    <img src="images/carpet-service.jpeg" alt="خدمات السجاد">
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-couch"></i>
+                    <h2>خدمات السجاد</h2>
+                    <p>إصلاح، تنظيف، وترميم جميع أنواع السجاد باحترافية عالية</p>
+                    <span class="cta-button">تصفح الخدمات</span>
+                </div>
+            </a>
+
+            <!-- Teachers Card -->
+            <a href="teachers.html" class="service-card">
+                <div class="card-image">
+                    <img src="images/teaching-service.jpeg" alt="خدمات التدريس">
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h2>خدمات التدريس</h2>
+                    <p>دروس خصوصية لجميع المواد والمراحل التعليمية</p>
+                    <span class="cta-button">تصفح الخدمات</span>
+                </div>
+            </a>
+
+            <!-- General Services Card -->
+            <a href="general.html" class="service-card">
+                <div class="card-image">
+                    <img src="images/general-service.jpeg" alt="خدمات عامة">
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-tools"></i>
+                    <h2>خدمات عامة</h2>
+                    <p>حلول شاملة لجميع احتياجاتك المنزلية</p>
+                    <span class="cta-button">تصفح الخدمات</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
