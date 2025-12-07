@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="css/style.css">
 
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
+<!-- Add these in the head section -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<link rel="stylesheet" href="css/sections.css">
 </head>
 <body>
     <a href="start.html" class="back-to-start">
@@ -269,7 +272,143 @@
         <i class="fab fa-whatsapp"></i>
         <span>تواصل معنا</span>
     </a>
+    <!-- YouTube Channels Section -->
+    <section id="youtube" class="youtube-section">
+        <div class="container">
+            <h2 class="section-title">قنوات اليوتيوب التعليمية</h2>
+            <div class="youtube-grid">
+                <div class="youtube-channel">
+                    <div class="youtube-thumbnail">
+                        <img src="images/youtube-placeholder.jpg" alt="قناة السجاد">
+                        <a href="#" class="play-button" aria-label="مشاهدة القناة">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <h3>قناة العناية بالسجاد</h3>
+                    <p>نصائح وإرشادات للعناية بالسجاد والموكيت</p>
+                    <a href="#" class="cta-button">اشترك في القناة</a>
+                </div>
+                <!-- Add more channels as needed -->
+            </div>
+        </div>
+    </section>
 
+    <!-- Educational Accounts Section -->
+    <section id="accounts" class="accounts-section">
+        <div class="container">
+            <h2 class="section-title">حساباتنا التعليمية</h2>
+            <div class="social-accounts">
+                <div class="social-account">
+                    <i class="fab fa-instagram"></i>
+                    <h3>انستجرام</h3>
+                    <p>نصائح يومية للعناية بالسجاد</p>
+                    <a href="#" class="cta-button">تابعنا</a>
+                </div>
+                <!-- Add more accounts as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">آراء العملاء</h2>
+            <div class="reviews-slider">
+                <div class="review">
+                    <div class="review-content">
+                        <p>"خدمة ممتازة وجودة عالية في إصلاح السجاد، أنصح الجميع بهذه الخدمة"</p>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-author">
+                        <img src="images/client1.jpg" alt="عميل">
+                        <h4>سالم أحمد</h4>
+                        <span>عميل سابق</span>
+                    </div>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Videos Section -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2 class="section-title">فيديوهات تعليمية</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="images/carpet-care-video.jpg" alt="فيديو تعليمي">
+                        <a href="#" class="play-button" aria-label="تشغيل الفيديو">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                    <h3>كيفية تنظيف البقع الصعبة من السجاد</h3>
+                    <p>مدة الفيديو: 10 دقائق</p>
+                </div>
+                <!-- Add more videos as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cleaning Methods Section -->
+    <section id="methods" class="curriculums-section">
+        <div class="container">
+            <h2 class="section-title">طرق التنظيف</h2>
+            <div class="curriculum-tabs">
+                <button class="tab-button active" data-tab="dry">التنظيف الجاف</button>
+                <button class="tab-button" data-tab="wet">التنظيف الرطب</button>
+                <button class="tab-button" data-tab="steam">التنظيف بالبخار</button>
+            </div>
+            <div class="curriculum-content">
+                <div class="tab-content active" id="dry-tab">
+                    <h3>التنظيف الجاف للسجاد</h3>
+                    <ul>
+                        <li>مناسب للسجاد الحساس</li>
+                        <li>يجف بسرعة</li>
+                        <li>لا يسبب انكماش</li>
+                        <li>مثالي للاستخدام اليومي</li>
+                    </ul>
+                </div>
+                <!-- Add more tabs as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">إنجازاتنا</h2>
+            <div class="achievements-grid">
+                <div class="achievement">
+                    <div class="achievement-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>1000+</h3>
+                    <p>عميل راضٍ</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>5000+</h3>
+                    <p>سجادة تم تنظيفها</p>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>10+</h3>
+                    <p>سنوات خبرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -317,6 +456,9 @@
  <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   
- 
+ <!-- Add these before the closing body tag -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/sections.js"></script>
 </body>
 </html>
