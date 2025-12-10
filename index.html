@@ -320,9 +320,15 @@
                 <button id="openReviewModal" class="cta-button">اكتب رأيك</button>
             </div>
             
-            <!-- Reviews Display -->
-            <div id="reviewsContainer" class="reviews-grid">
+               <!-- Reviews Carousel -->
+            <div id="reviewsCarousel" class="reviews-carousel">
                 <!-- Reviews will be dynamically inserted here -->
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="carousel-nav">
+                <button class="carousel-arrow prev-arrow"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-arrow next-arrow"><i class="fas fa-chevron-left"></i></button>
             </div>
         </div>
     </section>
@@ -542,7 +548,7 @@
             const openModalBtn = document.getElementById('openReviewModal');
             const closeModalBtn = document.querySelector('.close-modal');
             const reviewForm = document.getElementById('reviewForm');
-            const reviewsContainer = document.getElementById('reviewsContainer');
+            const reviewsCarousel = document.getElementById('reviewsCarousel');
             const stars = document.querySelectorAll('.rating-stars i');
             const ratingInput = document.getElementById('ratingValue');
             
@@ -561,6 +567,7 @@
             // Display existing reviews
             displayReviews();
             
+         
             // Modal functionality
             function openModal() {
                 modal.style.display = 'flex';
@@ -609,63 +616,20 @@
             }
             
             // Handle form submission
-            if (reviewForm) {
-                reviewForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const name = document.getElementById('studentName').value;
-                    const grade = document.getElementById('studentGrade').value;
-                    const text = document.getElementById('reviewText').value;
-                    const rating = parseInt(ratingInput.value);
-                    
-                    // Create new review object
-                    const newReview = {
-                        id: Date.now(),
-                        name: name,
-                        grade: grade,
-                        text: text,
-                        rating: rating,
-                        date: new Date().toLocaleDateString('ar-SA')
-                    };
-                    
-                    // Add to beginning of reviews array
-                    reviews.unshift(newReview);
-                    
-                    // Keep only the last 5 reviews
-                    if (reviews.length > 5) {
-                        reviews = reviews.slice(0, 5);
-                    }
-                    
-                    // Save to localStorage
-                    localStorage.setItem('carpetReviews', JSON.stringify(reviews));
-                    
-                    // Update display
-                    displayReviews();
-                    
-                    // Reset form and close modal
-                    reviewForm.reset();
-                    closeModal();
-                    
-                    // Show success message
-                    alert('شكراً لك على تقييمك!');
-                });
-            }
-            
+               
             function displayReviews() {
-                if (!reviewsContainer) return;
+                const reviewsCarousel = document.getElementById('reviewsCarousel');
+                if (!reviewsCarousel) return;
                 
                 // Clear existing reviews
-                reviewsContainer.innerHTML = '';
+                reviewsCarousel.innerHTML = '';
                 
-                // Display each review (only show the first 5)
-                const reviewsToShow = reviews.slice(0, 5);
-                
-                if (reviewsToShow.length === 0) {
-                    reviewsContainer.innerHTML = '<p>لا توجد تعليقات حتى الآن. كن أول من يشارك رأيه!</p>';
+                if (reviews.length === 0) {
+                    reviewsCarousel.innerHTML = '<p>لا توجد تعليقات حتى الآن. كن أول من يشارك رأيه!</p>';
                     return;
                 }
                 
-                reviewsToShow.forEach(review => {
+                reviews.forEach(review => {
                     const reviewElement = document.createElement('div');
                     reviewElement.className = 'review-card';
                     
@@ -697,10 +661,44 @@
                         <div class="review-date">${review.date}</div>
                     `;
                     
-                    reviewsContainer.appendChild(reviewElement);
+                    reviewsCarousel.appendChild(reviewElement);
+                });
+                
+                // Initialize Slick Carousel after reviews are loaded
+                $('.reviews-carousel').slick({
+                    rtl: true,
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    prevArrow: $('.prev-arrow'),
+                    nextArrow: $('.next-arrow'),
+                    appendDots: $('.carousel-dots'),
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
                 });
             }
-        });
+            
+               });
     </script>
     
     <style>
@@ -712,11 +710,71 @@
             margin-bottom: 30px;
         }
 
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        .reviews-carousel-container {
+            position: relative;
+            padding: 0 40px;
+            margin: 30px 0;
+        }
+        
+        .reviews-carousel {
+            margin: 0 -15px;
+        }
+        
+        .reviews-carousel .slick-slide {
+            padding: 0 15px;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
+        }
+        
+        .carousel-arrow {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            padding: 5px 15px;
+            transition: color 0.3s;
+        }
+        
+        .carousel-arrow:hover {
+            color: #8B5A2B;
+        }
+        
+        .carousel-dots {
+            margin: 0 20px;
+        }
+        
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slick-dots li {
+            margin: 0 5px;
+        }
+        
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: #ddd;
+            text-indent: -9999px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slick-dots li.slick-active button {
+            background-color: #8B5A2B;
         }
 
         .review-card {
@@ -725,6 +783,14 @@
             padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            margin: 0 10px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .review-card:hover {
